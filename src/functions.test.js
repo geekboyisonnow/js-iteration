@@ -65,6 +65,12 @@
 
 // ...
 
+const yelling = array => {
+  return array.map(str => {
+    return str.toUpperCase()
+  })
+}
+
 /**
  *
  * Define a function named `doubleTrouble` that takes an array of
@@ -74,6 +80,13 @@
 
 // ...
 
+const doubleTrouble = numbers => {
+  return numbers.map(str => {
+    str = str * 2
+    return str
+  })
+}
+
 /*
  * Define a function stringyIndexes() that takes an array of
  * strings as an argument and returns a new array with each string
@@ -82,6 +95,13 @@
 
 // ...
 
+const stringyIndexes = string => {
+  return string.map((str, index) => {
+    str = str + ' is at index ' + index
+    return str
+  })
+}
+
 /*
  * Define a function onlyTheEvenSurvive that accepts an array of
  * numbers and returns only the elements that are even
@@ -89,12 +109,25 @@
 
 // ...
 
+const onlyTheEvenSurvive = numbers => {
+  return numbers.filter(onlyEven => {
+    onlyEven = onlyEven % 2 === 0
+    return onlyEven
+  })
+}
+
 /*
  * Define a function onlyTheEvenIndexedSurvive that accepts an array of
  * numbers and returns only the elements at indexes that are even
  */
 
 // ...
+
+const onlyTheEvenIndexedSurvive = array => {
+  return array.filter((evenIndex, index) => {
+    return index % 2 === 0
+  })
+}
 
 /*
  * Define a function bestMoviesOfTheYear that accepts an array of
@@ -112,6 +145,16 @@
 
 // ...
 
+const bestMoviesOfTheYear = (movieName, movieYear) => {
+  return movieName
+    .filter(movie => {
+      return movie.score >= 90 && movie.year === movieYear
+    })
+    .map(object => {
+      return object.name
+    })
+}
+
 /*
  * Define a function everyoneIsOdd that accepts an array of
  * numbers and returns true if every element of the array is
@@ -119,6 +162,12 @@
  */
 
 // ...
+
+const everyoneIsOdd = array => {
+  return array.every(number => {
+    return number % 2 !== 0
+  })
+}
 
 /*
  * Define a function findTheNeedle that accepts an array of
@@ -128,6 +177,12 @@
 
 // ...
 
+const findTheNeedle = array => {
+  return array.find(string => {
+    return string.includes('needle')
+  })
+}
+
 /*
  * Define a function findTheNeedleIndex that accepts an array of
  * strings and returns the index of the string that contains
@@ -136,6 +191,12 @@
 
 // ...
 
+const findTheNeedleIndex = array => {
+  return array.findIndex(string => {
+    return string.includes('needle')
+  })
+}
+
 /*
  * Define a function someoneToLove that accepts an array of
  * strings and returns true if at least one string is exactly
@@ -143,6 +204,12 @@
  */
 
 // ...
+
+const someoneToLove = array => {
+  return array.some(word => {
+    return word.length === 4
+  })
+}
 
 /*
  * Define a function mapYourself that accepts an array of
@@ -154,6 +221,14 @@
  */
 
 // ...
+
+const mapYourself = numbers => {
+  let numbersArray = []
+  for (let index = 0; index < numbers.length; index++) {
+    numbersArray.push(numbers[index] * 2)
+  }
+  return numbersArray
+}
 
 /*
  * Define a function filterYourself that accepts an
@@ -167,6 +242,16 @@
 
 // ...
 
+const filterYourself = numbers => {
+  let numbersArray = []
+  for (let index = 0; index < numbers.length; index++) {
+    if (numbers[index] % 2 === 0) {
+      numbersArray.push(numbers[index])
+    }
+  }
+  return numbersArray
+}
+
 /*
  * Define a function everyYourself that accepts an
  * array of numbers and returns true if every number
@@ -178,6 +263,15 @@
  */
 
 // ...
+
+const everyYourself = numbers => {
+  for (let index = 0; index < numbers.length; index++) {
+    if (numbers[index] % 2 !== 0) {
+      return false
+    }
+  }
+  return true
+}
 
 /**
  * NOTE: Don't modify anything below this line...
